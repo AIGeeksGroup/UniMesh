@@ -1,0 +1,4 @@
+<think>
+The model should generate an image where the butterfly's wings are composed entirely of delicate flower petals, seamlessly blending into the butterfly's form, with a pure white background.
+The expanded prompt follows: A delicate butterfly with wings composed entirely of intricately layered flower petals, seamlessly blending into the butterfly's form, set against a pure white background. The petals should appear soft, organic, and detailed, with a natural gradient of colors such as soft pinks, whites, and subtle greens. The image should have a clean, minimalist aesthetic with no shadows, emphasizing the ethereal and harmonious design of the butterfly. Ultra-realistic rendering with fine textures and a serene, dreamlike atmosphere.
+</think>

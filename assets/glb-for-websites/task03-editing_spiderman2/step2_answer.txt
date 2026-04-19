@@ -1,0 +1,3 @@
+<think>
+The user wants the image to feature a single purple flower instead of two. The vase and its pink color should remain unchanged, as they are the primary elements to preserve. The two flowers in the question image are replaced with a single flower, maintaining the same size, color, and orientation to ensure consistency.
+</think>

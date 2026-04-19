@@ -1,0 +1,411 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --bg-color: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --border-color: #e5e7eb;
+  --max-width: 1000px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.authors,
+.affiliations {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.author-note {
+  margin: -0.25rem 0 1.25rem;
+  text-align: center;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.author-block,
+.affil-block {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--text-color);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+/* Sections */
+section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+/* Abstract */
+.abstract-content {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  font-style: italic;
+}
+
+/* Figures */
+figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+figcaption {
+  margin-top: 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Teaser / Main Method Figure */
+#method img {
+  max-width: 100%;
+}
+
+/* Mesh Showcase */
+.mesh-showcase-wrapper {
+  overflow-x: hidden;
+  margin: 2rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  background: white;
+}
+
+.mesh-showcase-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: white;
+}
+
+.mesh-showcase-table th,
+.mesh-showcase-table td {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mesh-showcase-table th:first-child,
+.mesh-showcase-table td:first-child {
+  text-align: center;
+}
+
+.mesh-showcase-table th {
+  background: #eef4ff;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mesh-showcase-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mesh-cell {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef2ff 100%);
+  border: 1px solid #dbe4ff;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+.mesh-cell img,
+.mesh-cell model-viewer {
+  display: block;
+  width: 100%;
+  height: 160px;
+  border-radius: 0.5rem;
+  background: radial-gradient(circle at top, #ffffff 0%, #e5eefc 100%);
+  overflow: hidden;
+}
+
+.mesh-cell img {
+  object-fit: contain;
+}
+
+/* Results Tables */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 0 auto;
+  background-color: white;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Left-align the first column (Method names) */
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Ensure highlighted rows look good on hover */
+tbody tr[style*="background-color"]:hover {
+  filter: brightness(0.95);
+}
+
+/* BibTeX */
+pre {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Video Demos */
+.video-section {
+  padding: 2rem 0;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* Enforce 4 columns */
+  gap: 1.5rem;
+  /* Slightly reduced gap for tighter packing */
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    /* 1 column on mobile */
+  }
+}
+
+.video-card {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  background: #000;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-caption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.badge-baseline {
+  background-color: #9ca3af;
+  color: white;
+}
+
+.badge-ours {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  max-width: var(--max-width);
+  margin: 2rem auto 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mesh-showcase-table th,
+  .mesh-showcase-table td {
+    padding: 0.5rem 0.35rem;
+  }
+
+  .mesh-cell img,
+  .mesh-cell model-viewer {
+    height: 120px;
+  }
+}

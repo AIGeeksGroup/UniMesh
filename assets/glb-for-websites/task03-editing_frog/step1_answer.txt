@@ -1,0 +1,4 @@
+<think>
+The model should generate an image of a green origami frog, folded precisely with clean lines and no visible shadows, placed against a pure white background.
+The expanded prompt follows: A meticulously crafted green origami frog, folded with precise, clean lines and no visible shadows, positioned against a pure white background. The image should emphasize the intricate details of the origami folds, showcasing the texture and symmetry of the design. The lighting is soft and even, highlighting the vibrant green color without any harsh reflections or gradients. The overall composition is minimalistic and clean, with a focus on the origami frog as the sole subject, creating a serene and elegant atmosphere.
+</think>

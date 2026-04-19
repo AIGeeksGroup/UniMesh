@@ -1,0 +1,4 @@
+<think>
+The model should generate an image of Spiderman in his full-body suit, standing upright, with no shadow and a pure white background.
+Here’s the expanded prompt: Spiderman in his full-body suit, standing upright and fully detailed, with his iconic red and blue suit featuring web patterns, black accents, and the spider emblem on his chest. The image has a pure white background, no shadows, and a clean, minimalist aesthetic, emphasizing the suit's vibrant colors and intricate design.
+</think>

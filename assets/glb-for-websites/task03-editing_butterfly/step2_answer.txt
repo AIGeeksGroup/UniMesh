@@ -1,0 +1,3 @@
+<think>
+The user wants the butterfly's antennae removed while keeping the rest of the image intact. The structure, color, and layout of the butterfly should remain unchanged, ensuring only the antennae are edited out seamlessly.
+</think>

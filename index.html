@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniMesh: Unifying 3D Mesh Understanding and Generation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .title-gradient {
+            background: linear-gradient(90deg, #7c3aed 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <header class="container">
+        <h1><span class="title-gradient">UniMesh</span>: Unifying 3D Mesh Understanding and Generation</h1>
+
+        <!-- <h2>Conference 2026</h2> -->
+
+        <div class="authors">
+            <div class="author-block"><a href="#">Peng Huang</a><sup>1*</sup></div>
+            <div class="author-block"><a href="#">Yifeng Chen</a><sup>2*</sup></div>
+            <div class="author-block"><a href="https://steve-zeyu-zhang.github.io/">Zeyu Zhang</a><sup>2*†</sup></div>
+            <div class="author-block"><a href="https://ha0tang.github.io/">Hao Tang</a><sup>2‡</sup></div>
+        </div>
+
+        <div class="affiliations">
+            <div class="affil-block"><sup>1</sup>Boston University</div>
+            <div class="affil-block"><sup>2</sup>Peking University</div>
+        </div>
+
+        <div class="author-note">
+            <small><sup>*</sup>Equal contribution. <sup>&dagger;</sup>Project lead. <sup>&Dagger;</sup>Corresponding author.</small>
+        </div>
+
+        <div class="links">
+            <a href="#" class="btn"><i class="fas fa-file-pdf icon"></i> Paper</a>
+            <a href="https://github.com/AIGeeksGroup/UniMesh" class="btn"><i class="fab fa-github icon"></i> Code</a>
+            <a href="https://huggingface.co/datasets/AIGeeksGroup/UniMesh-Data" class="btn"><i class="fas fa-database icon"></i> Data</a>
+            <!-- <a href="#bibtex" class="btn"><i class="fas fa-quote-right icon"></i> Cite</a> -->
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="abstract">
+            <div class="abstract-content">
+                <div class="video-wrapper">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="assets/teaser-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="insight">
+            <h2>Mesh Generation and Editing Results</h2>
+            <div class="mesh-showcase-wrapper">
+                <table class="mesh-showcase-table">
+                    <thead>
+                        <tr>
+                            <th>Images</th>
+                            <th>meshes</th>
+                            <th>edited images</th>
+                            <th>edited meshes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/astronaut/astronaut-step3_mesh.png" alt="astronaut image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/astronaut/astronaut-step3_mesh.glb"
+                                        alt="astronaut mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/astronaut/astronaut-step4_mesh.png" alt="astronaut edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/astronaut/astronaut-step4_mesh.glb"
+                                        alt="astronaut edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/balloon/balloon-step3_mesh.png" alt="balloon image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/balloon/balloon-step3_mesh.glb"
+                                        alt="balloon mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/balloon/balloon-step4_mesh.png" alt="balloon edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/balloon/balloon-step4_mesh.glb"
+                                        alt="balloon edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/bulldozer/bulldozer-step3_mesh.png" alt="bulldozer image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/bulldozer/bulldozer-step3_mesh.glb"
+                                        alt="bulldozer mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/bulldozer/bulldozer-step4_mesh.png" alt="bulldozer edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/bulldozer/bulldozer-step4_mesh.glb"
+                                        alt="bulldozer edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/lion/lion-step3_mesh.png" alt="lion image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/lion/lion-step3_mesh.glb" alt="lion mesh"
+                                        camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/lion/lion-step4_mesh-03.png" alt="lion edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/lion/lion-step4_mesh-03.glb"
+                                        alt="lion edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/motorcycle/step3_mesh_motorcycle.png" alt="motorcycle image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/motorcycle/step3_mesh_motorcycle.glb"
+                                        alt="motorcycle mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/motorcycle/motor-step4-02.png" alt="motorcycle edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/motorcycle/motor-step4-02.glb"
+                                        alt="motorcycle edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_butterfly/step1_image.png" alt="butterfly image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_butterfly/step3_mesh_20260312_011145.glb"
+                                        alt="butterfly mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_butterfly/step2_image.png" alt="butterfly edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_butterfly/step4_mesh_20260312_011352.glb"
+                                        alt="butterfly edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_fish/step1_image.png" alt="fish image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_fish/step3_mesh_20260312_010433.glb"
+                                        alt="fish mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_fish/step2_image.png" alt="fish edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_fish/step4_mesh_20260312_010559.glb"
+                                        alt="fish edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_frog/step1_image.png" alt="frog image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_frog/step3_mesh_20260312_010144.glb"
+                                        alt="frog mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_frog/step2_image.png" alt="frog edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_frog/step4_mesh_20260312_010318.glb"
+                                        alt="frog edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_spiderman2/step1_image.png" alt="spiderman2 image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_spiderman2/step3_mesh_20260312_003826.glb"
+                                        alt="spiderman2 mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/task03-editing_spiderman2/step2_image.png" alt="spiderman2 edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/task03-editing_spiderman2/step4_mesh_20260312_003955.glb"
+                                        alt="spiderman2 edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/vase/vase-step3_mesh.png" alt="vase image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/vase/vase-step3_mesh.glb" alt="vase mesh"
+                                        camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <img src="assets/glb-for-websites/vase/vase-step4_mesh.png" alt="vase edited image">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mesh-cell">
+                                    <model-viewer src="assets/glb-for-websites/vase/vase-step4_mesh.glb"
+                                        alt="vase edited mesh" camera-controls auto-rotate ar shadow-intensity="1.2"
+                                        touch-action="pan-y"></model-viewer>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="method">
+            <h2>Framework of UniMesh</h2>
+            <figure>
+                <img src="assets/figs/unimesh-arch_page-0001.jpg" alt="Framework of UniMesh">
+                <figcaption>
+                    <strong>Framework of UniMesh.</strong>
+                    Given a text prompt or modification instruction, BAGEL with Qwen generates an image latent, which
+                    is transformed by the Mesh Head into a conditioning latent for Hunyuan3D to produce a 3D mesh. The
+                    reference image latent of the generated mesh can be fed back into BAGEL for iterative refinement
+                    via Chain-of-Mesh, while self-reflection enables semantic feedback loops for understanding tasks.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <section id="method">
+            <h2>Chain of Mesh</h2>
+            <figure>
+                <img src="assets/figs/CoM.drawio_page-0001.jpg" alt="Chain of Mesh">
+                <figcaption>
+                    <strong>Chain of Mesh.</strong>
+                    A closed-loop "latent, prompting, and re-generation" cycle.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="method">
+            <h2>Self-Reflection</h2>
+            <figure>
+                <img src="assets/figs/reflexion6_page-0001.jpg" alt="Pipeline of Self-Reflection">
+                <figcaption>
+                    <strong>Pipeline of Self-Reflection.</strong>
+                    The pipeline progresses from a 3D object, through rendering, view selection, to model captioning.
+                    The Reflexion agent continuously corrects errors through iterative loops, proposes improvements,
+                    and eventually provides the final answer.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <section id="method">
+            <h2>Mesh Generation and Editing</h2>
+            <figure>
+                <img src="assets/figs/teaser6_page-0001.jpg" alt="UniMesh enables semantic-aware 3D mesh generation and editing">
+                <figcaption>
+                    <strong>UniMesh enables semantic-aware 3D mesh generation and editing.</strong>
+                    From a single text prompt (top row), UniMesh generates high-fidelity 3D meshes. Leveraging its
+                    unified understanding--generation architecture, it further supports iterative semantic edits
+                    (bottom row), such as changing object color ("blue motorcycle" to "red motorcycle"), adding
+                    attributes ("astronaut" to "astronaut holding the Moon"), or modifying structure ("tracks" to
+                    "wheels"), demonstrating the synergy between 3D understanding and generation capabilities within
+                    the <em>Chain-of-Mesh</em> mechanism.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <section id="method">
+            <h2>Object Captioning</h2>
+            <figure>
+                <img src="assets/figs/captions_page-0001.jpg" alt="Captions generated by UniMesh">
+                <figcaption>
+                    <strong>Captions generated by UniMesh.</strong>
+                    In each box, there are 4 good views of a 3D object and a caption of it generated by UniMesh.
+                    UniMesh generates detailed, attribute-rich captions, describing not only object identity but also
+                    color combinations, structural elements, etc.
+                </figcaption>
+            </figure>
+        </section>
+
+
+        <!--
+        <section id="bibtex">
+            <h2>Citation</h2>
+            <pre>
+@article{chen2026flashblock,
+  title={FlashBlock: Attention Caching for Efficient Long-Context Block Diffusion},
+  author={Chen, Zhuokun and Cai, Jianfei and Zhuang, Bohan},
+  journal={ICML Submission},
+  year={2026}
+}
+            </pre>
+        </section>
+        -->
+
+    </div>
+
+    
+    <footer>
+        <p>UniMesh: Unifying 3D Mesh Understanding and Generation</p>
+    </footer>
+
+</body>
+
+</html>

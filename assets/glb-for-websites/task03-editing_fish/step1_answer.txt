@@ -1,0 +1,4 @@
+<think>
+The model should generate an image of a fish crafted entirely from leaves, placed on a pure white background, with no visible shadows to emphasize the artistic and natural design.
+Here’s the finished detailed prompt: A delicate and artistic fish crafted entirely from leaves, meticulously arranged to mimic the shape and texture of a real fish, placed on a pure white background. The image should have no visible shadows, highlighting the intricate details and natural beauty of the leafy design. The overall aesthetic is clean, minimalist, and focused on the craftsmanship, with soft, even lighting to enhance the organic texture and vibrant green hues of the leaves.
+</think>
